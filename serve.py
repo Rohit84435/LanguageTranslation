@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from langchain_core.prompts import ChatMessagePromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 import os
@@ -14,7 +14,7 @@ model = ChatGroq(model="groq/compound",groq_api_key=groq_api_key)
 # 2. Create prompt template
 
 system_template = "Translate the follow into {language}:"
-prompt_template = ChatMessagePromptTemplate.format_messages([
+prompt_template = ChatPromptTemplate.from_messages([
     ('system',system_template),
     ('user','{text}')
 ])
