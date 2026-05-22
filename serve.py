@@ -4,7 +4,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 import os
 from langserve import add_routes
-from dotenv import load_dotenv
+from dotenv import load_doten
 load_dotenv()
 
 # 1. Model we use
